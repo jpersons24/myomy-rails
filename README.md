@@ -15,6 +15,9 @@ ruby '2.6.1'
 gem 'rack-cors'
 1. within ./config/initializers/cors.rb: see configuration code for details
 
+*use active model serializers*
+gem 'active_model_serializers', '~> 0.10.12'
+
 * Database creation
 *postgresql database*
 gem 'pg', '~> 1.1'
