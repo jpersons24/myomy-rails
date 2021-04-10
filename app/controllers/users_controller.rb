@@ -10,5 +10,11 @@ class UsersController < ApplicationController
       render json: user
    end
 
+   def login
+      user = User.second
+      render json: user
+   end
+
+
 
 end
