@@ -7,8 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+puts 'creating extra users'
 
-puts 'creating dummy data to test associations'
+# created user for auth
+# User.create(username: 'jakepersons', password: 'Ronaldo9!')
+
+
+# puts 'creating dummy data to test associations'
 
 # puts 'creating week'
 # Week.create(start: 'March 28, 2021', finish: 'April 3, 2021')
@@ -29,8 +34,8 @@ puts 'creating dummy data to test associations'
 # puts 'creating Meals'
 # Meal.create(date: 'March 29, 2021', name: 'snack', description: 'Fruit smoothie from Starbucks')
 
-puts 'creating foods'
-Food.create(user_id: 1, meal_id: 1, name: 'banana', food_group: 'fruit', nutrient: 'carbs')
-Food.create(user_id: 1, meal_id: 1, name: 'Peanut Butter', food_group: 'legumes', nutrient:'fat and protein')
+# puts 'creating foods'
+# Food.create(user_id: 1, meal_id: 1, name: 'banana', food_group: 'fruit', nutrient: 'carbs')
+# Food.create(user_id: 1, meal_id: 1, name: 'Peanut Butter', food_group: 'legumes', nutrient:'fat and protein')
 
 puts 'finsihed seeding dummy data'
