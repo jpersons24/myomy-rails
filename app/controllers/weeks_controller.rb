@@ -10,4 +10,9 @@ class WeeksController < ApplicationController
       render json: week
    end
 
+   def destroy
+      week = Week.find(params[:id])
+      week.destroy
+   end
+
 end

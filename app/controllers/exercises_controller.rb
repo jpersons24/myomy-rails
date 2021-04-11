@@ -10,4 +10,9 @@ class ExercisesController < ApplicationController
       render json: exercise
    end
 
+   def destroy
+      exercise = Exercise.find(params[:id])
+      exercise.destroy
+   end
+
 end
