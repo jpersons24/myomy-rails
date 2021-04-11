@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  # custom route to users controller and login action
+  # custom login route
   post "/login", to: "users#login"
+  # custom auto login route
+  get "/me", to: "users#me"
+  patch "/me", to: "users#update"
 end
