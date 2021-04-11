@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
    # :authenticate method is inherited from Application Controller
-   # before_action :authenticate, only [:me]
+   before_action :authenticate, only [:me. :update]
 
    def index
       users = User.all 
@@ -21,15 +21,13 @@ class UsersController < ApplicationController
    # GET /me
    def me
       # check some identifying info about request (token header)
-      user = User.second
-      render json: user
+      render json: @current_user
    end
 
    # PATCH /me
    def update
-      user = User.second
-      user.update(username: params[:username], profile_img: params[:profile_img])
-      render json: user
+      @current_user.update(username: params[:username], profile_img: params[:profile_img])
+      render json: @current_user
    end
 
 
