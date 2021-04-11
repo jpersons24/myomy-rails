@@ -27,6 +27,16 @@ class UsersController < ApplicationController
       # end
    end
 
+   # POST /signup
+   def signup
+      user = User.create(user_params)
+      if user.valid?
+         render json: user, status: :created
+      else
+         render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+      end
+   end
+
    # GET /me
    def me
       # check some identifying info about request (token header)
@@ -35,8 +45,14 @@ class UsersController < ApplicationController
 
    # PATCH /me
    def update
-      @current_user.update(username: params[:username], profile_img: params[:profile_img])
+      @current_user.update(user_params)
       render json: @current_user
+   end
+
+   private
+
+   def user_params
+      params.permit(:username, :password, :profile_img)
    end
 
 

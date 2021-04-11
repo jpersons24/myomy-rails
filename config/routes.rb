@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   # custom auto login route
   get "/me", to: "users#me"
   patch "/me", to: "users#update"
+  post "/signup", to: "users#signup"
 end
