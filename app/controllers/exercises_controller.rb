@@ -10,9 +10,20 @@ class ExercisesController < ApplicationController
       render json: exercise
    end
 
+   def create
+      exercise = Exercise.create(exercise_params)
+      render json: exercise
+   end
+
    def destroy
       exercise = Exercise.find(params[:id])
       exercise.destroy
+   end
+
+   private
+
+   def exercise_params
+      params.permit(:name, :sets, :repetitions, :workout_id)
    end
 
 end
