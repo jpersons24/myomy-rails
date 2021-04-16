@@ -1,8 +1,9 @@
 class User < ApplicationRecord
-   has_many :workouts
+   has_many :workouts, dependent: :destroy
    has_many :weeks, through: :workouts
-   has_many :foods
-   has_many :meals, through: :foods
+   has_many :meals, dependent: :destroy
+
+
 
    # has_secure_password allows for:
    # string password "123" => password_digest "n37haps9uhg9q8htbas" (encrypted password)
