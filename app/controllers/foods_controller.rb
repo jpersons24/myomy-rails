@@ -10,4 +10,15 @@ class FoodsController < ApplicationController
       render json: food
    end
 
+   def create
+      food = Food.create(food_params)
+      render json: food
+   end
+
+   private
+
+   def food_params
+      params.permit(:name, :food_group, :nutrient, :meal_id)
+   end
+
 end
