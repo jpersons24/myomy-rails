@@ -15,16 +15,16 @@ class UsersController < ApplicationController
    # POST /login
    def login
       # fake login
-      user = User.second
-      render json: user
+      # user = User.second
+      # render json: user
 
       # true login
-      # user = User.find_by(username: params[:username])
-      # if user && user.authenticate(params[:password])
-      #    render json: user
-      # else
-      #    render json: { errors: ["Invalid username or password"] }, status: :unauthorized
-      # end
+      user = User.find_by(username: params[:username])
+      if user && user.authenticate(params[:password])
+         render json: user
+      else
+         render json: { errors: ["Invalid username or password"] }, status: :unauthorized
+      end
    end
 
    # POST /signup
@@ -45,8 +45,11 @@ class UsersController < ApplicationController
 
    # PATCH /me
    def update
-      @current_user.update(user_params)
-      render json: @current_user
+      # @current_user.update(user_params)
+      # render json: @current_user
+      user = User.find(params[:id])
+      user.update(user_params)
+      render json: user
    end
 
    private
