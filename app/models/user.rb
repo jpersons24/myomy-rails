@@ -10,4 +10,5 @@ class User < ApplicationRecord
    # allows for user.authenticate("123") => checks if password matches password that is saved into database
    has_secure_password
    validates :username, uniqueness: { case_sensitive: false }
+   validates :username, presence: true
 end
